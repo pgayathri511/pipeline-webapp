@@ -8,16 +8,16 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '8cb6f8a5-f334-4faf-80a8-fa523c7ece73'
+  azureServiceConnectionId: 'nybAzure-Connection'
 
   # Web app name
-  webAppName: 'nybwebapp1'
+  webAppName: 'nybwebpage'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'nybwebapp1'
+  environmentName: 'nybwebpage'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -79,7 +79,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : nybwebapp1'
+            displayName: 'Deploy Azure Web App : nybwebpage'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
